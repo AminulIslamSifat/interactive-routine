@@ -9,5 +9,8 @@ authors = [{ name = "Aminul Islam Sifat" }]
 [project.scripts]
 interactive-routine = "server:main"
 
+[tool.poetry]
+package-mode = false
+
 [tool.uv]
 dev-dependencies = []
