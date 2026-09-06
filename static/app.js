@@ -1,57 +1,25 @@
-// ═══════════════════════════════════════════════════════
-// Interactive Routine — Class Routine, Schedule, Personal
-// Pure vanilla JS. No deps.
-// ═══════════════════════════════════════════════════════
 
 const API = '';
 const DAYS = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
 const DAYS_SHORT = ['Sat','Sun','Mon','Tue','Wed','Thu','Fri'];
 
-// Teacher code → full name (from CSE dept sheet)
-const TEACHER_NAMES = {
-  SUZ: 'Prof. Dr. Md. Shahid Uz Zaman', NIM: 'Prof. Dr. Md. Nazrul Islam Mondal',
-  MRI: 'Prof. Dr. Md. Raisul Islam', BA: 'Prof. Dr. Bashir Ahmed',
-  SA: 'Shyla Afroge', JR: 'Dr. Julia Rahman', EKH: 'Emrana Kabir Hashi',
-  SZM: 'Sadia Zaman Mishu', SeN: 'Barshon Sen', MZI: 'Md. Zahurul Islam',
-  MAN: 'Mohiuddin Ahmed', AYS: 'Md. Azmain Yakin Srizon',
-  AMR: 'A. F. M. Minhazur Rahman', FP: 'Farjana Parvis', UD: 'Usha Das',
-  MSI: 'Md. Sontib Hossain', NOS: 'Md. Nasif Osman Khanpur',
-  MIT: 'Md. Mazharul Islam', FAR: 'Md. Farhan Shakib',
-  KZN: 'Khaled Zinnuraine', SIA: 'Samiul Islam Anik',
-  SAM: 'Mohammad Sakif Alam', MTI: 'Md. Touhidul Islam',
-  FF: 'Md. Fahim Faisal',
-  ABS: 'Md. Abu Bokar Siddique', AH: 'Abuab Habib',
-  SH: 'rof Dr. Md Shakhawat Hossain', OF: 'Fatema Oishorjo',
-  MAR: 'Md. Ashikur Rahman', SI: 'Shoaib Islam',
-  TKS: 'Tahmina Khatun', NF1: 'New Faculty',
-  AKZ: 'Prof. Dr. Md. Abdul Kader Zilani', MNZ: 'Prof. Dr. Md. Nuruzzaman',
-  AAM: 'Md. Abdullah-Al-Mamun', MSI2: 'Md. Sajidul Islam',
-  MAA: 'Prof. Dr. Md. Ashraful Alam', OKG: 'Omeo Kumar Ghosh',
-  AM: 'Prof. Dr. Mohammed Abdul Motin', ABM: 'Md. Abdul Malek',
-  MMI: 'Md. Mayenul Islam', MNA: 'Md. Nuhi-Alamin',
-  TSJ: 'Tamim Sarker Joyeeta', MRA: 'Md. Roinul Ajom Ruku',
-  MBA: 'Dr. Md. Belal Hossain', MSR: 'Prof. Dr. Md Saifur Rahman',
-  MAH: 'Dr. Md. Alal Hosen', MHU: 'Dr. Md Helal Uddin Mollah',
-  MRK: 'Mst. Rupale Khatun', MZA: 'Md. Zahangir Alom',
-};
+let TEACHER_NAMES = {};
 
-// ─── State ───────────────────────────────────────────────
-let config = null;          // {roll, year, semester, section}
+let config = null;
 let currentView = 'routine';
 let routineData = null;
 let schedules = [];
 let personalItems = [];
 let calendarDate = new Date();
 let personalEditMode = false;
-let personalActiveDay = DAYS_SHORT[new Date().getDay() === 6 ? 0 : new Date().getDay() + 1]; // Sat=0
-let changeFlowStep = 0; // 0=hidden, 1=semesters, 2=sections, 3=preview
+let personalActiveDay = DAYS_SHORT[new Date().getDay() === 6 ? 0 : new Date().getDay() + 1];
+let changeFlowStep = 0;
 let changeFlowSem = null;
 let changeFlowSection = null;
 let previewRoutine = null;
 let viewingPreview = false;
-let scheduleUpdateInfo = null; // {latest, current, hasUpdate}
+let scheduleUpdateInfo = null;
 
-// ─── DOM refs ────────────────────────────────────────────
 const $ = (sel) => document.querySelector(sel);
 const refreshIcons = () => { if (window.lucide) lucide.createIcons(); };
 const $$ = (sel) => [...document.querySelectorAll(sel)];
@@ -62,7 +30,6 @@ const sbBody = $('#sbBody');
 const modalOverlay = $('#modalOverlay');
 const modalContent = $('#modalContent');
 
-// Auto-refresh lucide icons on DOM changes (debounced to avoid loop)
 let _iconTimer = null;
 new MutationObserver(() => {
   clearTimeout(_iconTimer);
@@ -71,12 +38,12 @@ new MutationObserver(() => {
   }, 50);
 }).observe(document.body, { childList: true, subtree: true });
 
-// ─── Init ────────────────────────────────────────────────
 async function init() {
-  // Restore theme
+
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') document.body.classList.add('light');
 
+  TEACHER_NAMES = await api('/teachers.json') || {};
   config = await api('/api/config');
   if (!config || !config.roll) {
     showFirstLoginModal();
@@ -89,7 +56,6 @@ async function init() {
   loadPersonal();
 }
 
-// ─── API helper ──────────────────────────────────────────
 async function api(url, opts = {}) {
   try {
     const res = await fetch(url, opts);
@@ -107,9 +73,6 @@ async function apiDel(url) {
   return api(url, { method: 'DELETE' });
 }
 
-// ═══════════════════════════════════════════════════════
-// VIEW SWITCHING
-// ═══════════════════════════════════════════════════════
 function setupViews() {
   $$('.rail-btn[data-view]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -127,9 +90,6 @@ function switchView(view) {
   renderSidebar();
 }
 
-// ═══════════════════════════════════════════════════════
-// SIDEBAR (context-dependent)
-// ═══════════════════════════════════════════════════════
 function renderSidebar() {
   changeFlowStep = 0;
   if (currentView === 'routine') renderRoutineSidebar();
@@ -138,15 +98,12 @@ function renderSidebar() {
   else if (currentView === 'settings') renderSettingsView();
 }
 
-// ─── Routine Sidebar ─────────────────────────────────────
 function renderRoutineSidebar() {
-  // Leaving the change flow without applying -> restore default routine
+
   if (viewingPreview) { viewingPreview = false; loadRoutine(); }
   sbTitle.textContent = 'Class Routine';
   sbSubtitle.textContent = config ? `${config.year}-${config.semester} • Section ${config.section}` : 'Not set';
   sbBody.innerHTML = '';
-
-  // Collect unique teacher codes from actual slots in this routine
   if (routineData && routineData.slots && routineData.slots.length) {
     const codes = new Set();
     routineData.slots.forEach(s => {
@@ -171,8 +128,6 @@ function renderRoutineSidebar() {
   } else {
     sbBody.innerHTML = '<div class="empty-state"><p>No teacher data</p></div>';
   }
-
-  // Change button — pinned to sidebar bottom, outside scrollable area
   let btn = document.getElementById('sbChangeBtn');
   if (!btn) {
     btn = document.createElement('button');
@@ -187,7 +142,6 @@ function renderRoutineSidebar() {
   }
 }
 
-// ─── Change Flow (sidebar-only, multi-step) ──────────────
 async function startChangeFlow() {
   changeFlowStep = 1;
   sbTitle.textContent = 'Change Section';
@@ -215,8 +169,6 @@ async function startChangeFlow() {
     card.addEventListener('click', () => showSectionsForSem(key, index[key]));
     sbBody.appendChild(card);
   });
-
-  // Back button
   const back = document.createElement('button');
   back.className = 'sb-btn';
   back.textContent = '← Back';
@@ -259,14 +211,10 @@ async function previewSection(semKey, section) {
     sbBody.innerHTML = '<div class="empty-state"><p>Routine not found</p></div>';
     return;
   }
-
-  // Render main table with preview data (does NOT change default)
   viewingPreview = true;
   renderRoutineTable(previewRoutine);
   const pSemLabel = sem === '1' ? 'Odd' : 'Even';
   $('#routineSectionLabel').textContent = `Year ${year} • ${pSemLabel} • Section ${section} (preview)`;
-
-  // Show summary
   const days = previewRoutine.days || [];
   sbBody.innerHTML = '';
   days.forEach(day => {
@@ -281,8 +229,6 @@ async function previewSection(semKey, section) {
     `;
     sbBody.appendChild(card);
   });
-
-  // Apply button
   const applyBtn = document.createElement('button');
   applyBtn.className = 'sb-btn';
   applyBtn.style.borderColor = 'var(--accent)';
@@ -308,9 +254,6 @@ async function applySectionChange(year, sem, section) {
   renderRoutineSidebar();
 }
 
-// ═══════════════════════════════════════════════════════
-// CLASS ROUTINE VIEW
-// ═══════════════════════════════════════════════════════
 async function loadRoutine() {
   if (!config) return;
   const { year, semester, section } = config;
@@ -395,15 +338,10 @@ function renderRoutineTable(data) {
   body.innerHTML = html;
 }
 
-// ═══════════════════════════════════════════════════════
-// SCHEDULE VIEW
-// ═══════════════════════════════════════════════════════
 async function loadSchedules() {
   const y = calendarDate.getFullYear();
   const m = String(calendarDate.getMonth() + 1).padStart(2, '0');
   schedules = await api(`/api/schedule?month=${y}-${m}`) || [];
-
-  // If today > 20, also fetch next month
   if (new Date().getDate() > 20) {
     const next = new Date(y, calendarDate.getMonth() + 1, 1);
     const nm = String(next.getMonth() + 1).padStart(2, '0');
@@ -423,17 +361,13 @@ function renderCalendar() {
 
   const grid = $('#calGrid');
   grid.innerHTML = '';
-
-  // First day of month (Saturday = 0 for our calendar)
   const firstDay = new Date(y, m, 1);
-  let startDow = firstDay.getDay(); // JS: 0=Sun
-  startDow = (startDow + 1) % 7;    // Convert: Sat=0, Sun=1, ..., Fri=6
+  let startDow = firstDay.getDay();
+  startDow = (startDow + 1) % 7;
 
   const daysInMonth = new Date(y, m + 1, 0).getDate();
   const today = new Date();
   const todayStr = fmtDate(today);
-
-  // Padding for days before month start
   for (let i = 0; i < startDow; i++) {
     grid.innerHTML += '<div class="cal-cell other-month"></div>';
   }
@@ -453,8 +387,6 @@ function renderCalendar() {
     cell.addEventListener('click', () => showDaySchedule(dateStr, daySchedules));
     grid.appendChild(cell);
   }
-
-  // Calendar nav
   $('#calPrev').onclick = () => { calendarDate = new Date(y, m - 1, 1); loadSchedules(); };
   $('#calNext').onclick = () => { calendarDate = new Date(y, m + 1, 1); loadSchedules(); };
   $('#calToday').onclick = () => { calendarDate = new Date(); loadSchedules(); };
@@ -479,7 +411,6 @@ function showDaySchedule(dateStr, daySchedules) {
   showModal(html);
 }
 
-// ─── Schedule Sidebar ────────────────────────────────────
 function renderScheduleSidebar() {
   sbTitle.textContent = 'Schedule';
   const now = new Date();
@@ -500,7 +431,7 @@ function renderScheduleSidebar() {
       <div class="card-sub">${dateLabel} • ${esc(s.time || '')}</div>
     `;
     card.addEventListener('click', () => {
-      // Toggle expand in sidebar
+
       const existing = card.querySelector('.card-content');
       if (existing) { existing.remove(); card.classList.remove('active'); }
       else {
@@ -516,9 +447,6 @@ function renderScheduleSidebar() {
   });
 }
 
-// ═══════════════════════════════════════════════════════
-// PERSONAL ROUTINE VIEW
-// ═══════════════════════════════════════════════════════
 async function loadPersonal() {
   const data = await api('/api/personal');
   personalItems = data?.items || [];
@@ -531,8 +459,6 @@ function renderPersonalSidebar() {
   const today = new Date();
   sbSubtitle.textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
   sbBody.innerHTML = '';
-
-  // Day cards
   const dailyCard = document.createElement('div');
   dailyCard.className = `sb-card${personalActiveDay === 'Daily' ? ' active' : ''}`;
   dailyCard.innerHTML = '<div class="card-title"><i data-lucide="clipboard-list" class="ic-sm"></i> Daily</div><div class="card-sub">Every day items</div>';
@@ -541,7 +467,7 @@ function renderPersonalSidebar() {
 
   DAYS.forEach((day, i) => {
     const short = DAYS_SHORT[i];
-    const isToday = today.getDay() === (i + 6) % 7; // Sat=6 in JS getDay
+    const isToday = today.getDay() === (i + 6) % 7;
     const items = getItemsForDay(short);
     const card = document.createElement('div');
     card.className = `sb-card${personalActiveDay === short ? ' active' : ''}`;
@@ -563,7 +489,7 @@ function getItemsForDay(dayShort) {
 }
 
 function renderPersonalView() {
-  // Render day tabs
+
   const tabs = $('#dayTabs');
   tabs.innerHTML = '';
 
@@ -579,8 +505,6 @@ function renderPersonalView() {
     });
     tabs.appendChild(btn);
   });
-
-  // Render items
   const body = $('#personalBody');
   body.innerHTML = '';
 
@@ -615,8 +539,6 @@ function renderPersonalView() {
     el.querySelector('.check-circle').addEventListener('click', () => toggleCheck(item.id));
     body.appendChild(el);
   });
-
-  // Edit button handler
   $('#personalEditBtn').textContent = 'Edit';
   $('#personalEditBtn').onclick = () => {
     personalEditMode = true;
@@ -633,7 +555,7 @@ function renderPersonalEdit(body) {
   body.innerHTML = '';
 
   const allTabs = ['Daily', ...DAYS_SHORT];
-  // Show items for current tab, or all if editing
+
   let items = personalActiveDay === 'Daily'
     ? personalItems.filter(i => (i.frequency || ['daily']).includes('daily'))
     : getItemsForDay(personalActiveDay);
@@ -675,7 +597,6 @@ function formatFreq(freq) {
   return freq.map(f => f.charAt(0).toUpperCase() + f.slice(1, 3)).join('+');
 }
 
-// ─── Add Personal Item ───────────────────────────────────
 function showAddPersonalModal() {
   let dayChecks = DAYS_SHORT.map(d => `<label style="display:inline-flex;align-items:center;gap:4px;margin-right:8px"><input type="checkbox" value="${d.toLowerCase()}" style="width:auto"> ${d}</label>`).join('');
 
@@ -695,8 +616,6 @@ function showAddPersonalModal() {
       <button class="btn btn-primary" id="pAddBtn">Add</button>
     </div>
   `);
-
-  // Toggle day checkboxes when daily is unchecked
   const dailyCb = $('#pDaily');
   const dayChecksEl = $('#pDayChecks');
   dailyCb.addEventListener('change', () => {
@@ -721,7 +640,6 @@ function showAddPersonalModal() {
   });
 }
 
-// ─── Edit Personal Item ──────────────────────────────────
 function showEditPersonalModal(item) {
   const isDaily = (item.frequency || ['daily']).includes('daily');
   let dayChecks = DAYS_SHORT.map(d => {
@@ -764,8 +682,6 @@ function showEditPersonalModal(item) {
       frequency = [...dayChecksEl.querySelectorAll('input:checked')].map(cb => cb.value);
       if (!frequency.length) frequency = ['daily'];
     }
-
-    // If editing from a specific day tab and item is daily, ask scope
     if (personalActiveDay !== 'Daily' && isDaily) {
       closeModal();
       showScopeModal(item.id, { title, duration, frequency });
@@ -778,7 +694,6 @@ function showEditPersonalModal(item) {
   });
 }
 
-// ─── Scope Modal (Universal vs Day-specific) ─────────────
 function showScopeModal(itemId, changes) {
   showModal(`
     <h3>Apply Changes</h3>
@@ -796,7 +711,7 @@ function showScopeModal(itemId, changes) {
   });
 
   $('#scopeDay').addEventListener('click', async () => {
-    // Create an override for this specific day
+
     const item = personalItems.find(i => i.id === itemId);
     if (item) {
       if (!item.overrides) item.overrides = {};
@@ -808,7 +723,6 @@ function showScopeModal(itemId, changes) {
   });
 }
 
-// ─── Delete Personal Item ────────────────────────────────
 async function deletePersonalItem(item) {
   const isDaily = (item.frequency || ['daily']).includes('daily');
   if (isDaily && personalActiveDay !== 'Daily') {
@@ -837,7 +751,7 @@ function showDeleteScopeModal(item) {
   });
 
   $('#delDay').addEventListener('click', async () => {
-    // Remove this day from frequency
+
     const freq = (item.frequency || []).filter(f => f !== personalActiveDay.toLowerCase());
     if (!freq.length) { await apiDel(`/api/personal/items/${item.id}`); }
     else { await apiPut(`/api/personal/items/${item.id}`, { frequency: freq }); }
@@ -846,9 +760,6 @@ function showDeleteScopeModal(item) {
   });
 }
 
-// ═══════════════════════════════════════════════════════
-// FIRST LOGIN MODAL
-// ═══════════════════════════════════════════════════════
 function showFirstLoginModal() {
   showModal(`
     <h3>Welcome! <i data-lucide="graduation-cap" class="ic-lg"></i></h3>
@@ -896,9 +807,6 @@ function showFirstLoginModal() {
   });
 }
 
-// ═══════════════════════════════════════════════════════
-// SETTINGS VIEW
-// ═══════════════════════════════════════════════════════
 let settingsTab = 'general';
 
 const SETTINGS_TABS = [
@@ -906,10 +814,10 @@ const SETTINGS_TABS = [
   { id: 'appearance', label: 'Appearance', icon: '<i data-lucide="palette" class="ic-sm"></i>' },
   { id: 'routine', label: 'Routine', icon: '<i data-lucide="book-open" class="ic-sm"></i>' },
   { id: 'schedule', label: 'Schedule', icon: '<i data-lucide="calendar" class="ic-sm"></i>' },
-  { id: 'personal', label: 'Personal', icon: 'check-circle' },
+  { id: 'personal', label: 'Personal', icon: '<i data-lucide="circle-check" class="ic-sm"></i>' },
 ];
 
-let settingsMobileDrill = false; // true when on mobile viewing tab content
+let settingsMobileDrill = false;
 
 function isMobile() { return window.innerWidth <= 768; }
 
@@ -940,7 +848,7 @@ function renderSettingsView() {
   });
 
   if (isMobile()) {
-    // Show tab list only; content hidden until a tab is tapped
+
     sidebar.style.display = 'flex';
     mainArea.style.display = 'none';
     settingsMobileDrill = false;
@@ -962,8 +870,6 @@ function settingsBackToList() {
 
 function renderSettingsContent() {
   const body = $('#settingsBody');
-
-  // Mobile back button header
   if (isMobile() && settingsMobileDrill) {
     const tabLabel = SETTINGS_TABS.find(t => t.id === settingsTab)?.label || '';
     body.innerHTML = `
@@ -973,7 +879,7 @@ function renderSettingsContent() {
       <div id="settingsContentInner"></div>
     `;
     $('#settingsBackBtn').addEventListener('click', settingsBackToList);
-    // Render actual content into inner container
+
     const inner = $('#settingsContentInner');
     renderSettingsTabContent(inner);
     return;
@@ -1040,36 +946,101 @@ function renderSettingsTabContent(container) {
       });
       break;
 
-    case 'routine':
+    case 'routine': {
+      const prefs = JSON.parse(localStorage.getItem('routinePrefs') || '{}');
       container.innerHTML = `
         <h3 style="margin-bottom:16px">Routine Settings</h3>
         <div class="sb-card" style="padding:16px">
-          <div class="card-title"><i data-lucide="book-open" class="ic-sm"></i> Class Routine</div>
-          <div class="card-sub">Coming soon — display options, highlight current period, etc.</div>
+          <div class="card-title"><i data-lucide="eye" class="ic-sm"></i> Display</div>
+          <label><input type="checkbox" id="rpHighlight" ${prefs.highlight !== false ? 'checked' : ''}> Highlight current period</label>
+          <label><input type="checkbox" id="rpCompact" ${prefs.compact ? 'checked' : ''}> Compact table rows</label>
+          <label><input type="checkbox" id="rpTeacher" ${prefs.showTeacher !== false ? 'checked' : ''}> Show teacher names</label>
+          <button class="btn btn-primary" style="margin-top:12px" id="rpSave">Save</button>
         </div>
       `;
+      q('#rpSave').addEventListener('click', () => {
+        const p = {
+          highlight: q('#rpHighlight').checked,
+          compact: q('#rpCompact').checked,
+          showTeacher: q('#rpTeacher').checked,
+        };
+        localStorage.setItem('routinePrefs', JSON.stringify(p));
+        showToast('Routine preferences saved!');
+        if (typeof loadRoutine === 'function') loadRoutine();
+      });
       break;
+    }
 
-    case 'schedule':
+    case 'schedule': {
+      const sprefs = JSON.parse(localStorage.getItem('schedulePrefs') || '{}');
       container.innerHTML = `
         <h3 style="margin-bottom:16px">Schedule Settings</h3>
         <div class="sb-card" style="padding:16px">
-          <div class="card-title"><i data-lucide="calendar" class="ic-sm"></i> Schedule</div>
-          <div class="card-sub">Coming soon — default month, notification preferences, etc.</div>
+          <div class="card-title"><i data-lucide="database" class="ic-sm"></i> Data Source</div>
+          <div class="card-sub" style="margin-bottom:8px">Schedule data comes from Phantom Bot API. Set a cookie below if required.</div>
+          <label>Session Cookie (optional)</label>
+          <input id="scCookie" type="password" placeholder="Paste cookie value" value="${esc(sprefs.cookie || '')}">
+          <button class="btn" style="margin-top:8px" id="scSaveCookie">Save Cookie</button>
+        </div>
+        <div class="sb-card" style="padding:16px;margin-top:8px">
+          <div class="card-title"><i data-lucide="refresh-cw" class="ic-sm"></i> Refresh</div>
+          <div class="card-sub" style="margin-bottom:8px">Force re-fetch schedule from remote source.</div>
+          <button class="btn" id="scRefresh">Refresh Now</button>
         </div>
       `;
+      q('#scSaveCookie').addEventListener('click', async () => {
+        const cookie = q('#scCookie').value.trim();
+        await apiPost('/api/settings/cookie', { cookie });
+        const s = JSON.parse(localStorage.getItem('schedulePrefs') || '{}');
+        s.cookie = cookie;
+        localStorage.setItem('schedulePrefs', JSON.stringify(s));
+        showToast('Cookie saved!');
+      });
+      q('#scRefresh').addEventListener('click', async () => {
+        q('#scRefresh').textContent = 'Refreshing...';
+        q('#scRefresh').disabled = true;
+        try {
+          await apiPost('/api/settings/refresh', {});
+          showToast('Schedule refreshed!');
+        } catch { showToast('Refresh failed'); }
+        q('#scRefresh').textContent = 'Refresh Now';
+        q('#scRefresh').disabled = false;
+      });
       break;
+    }
 
-    case 'personal':
+    case 'personal': {
+      const pprefs = JSON.parse(localStorage.getItem('personalPrefs') || '{}');
+      const days = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
+      const dayOpts = days.map((d,i) => `<option value="${i}" ${pprefs.defaultDay == i ? 'selected' : ''}>${d}</option>`).join('');
+      const sorts = [['time','By Time'],['created','By Created']];
+      const sortOpts = sorts.map(([v,l]) => `<option value="${v}" ${pprefs.sort === v ? 'selected' : ''}>${l}</option>`).join('');
       container.innerHTML = `
         <h3 style="margin-bottom:16px">Personal Routine Settings</h3>
         <div class="sb-card" style="padding:16px">
-          <div class="card-title"><i data-lucide="check-circle" class="ic-sm"></i> Personal Routine</div>
-          <div class="card-sub">Coming soon — default day, item defaults, etc.</div>
+          <div class="card-title"><i data-lucide="sliders" class="ic-sm"></i> Defaults</div>
+          <label>Default Day Tab</label>
+          <select id="ppDay">${dayOpts}</select>
+          <label>Sort Order</label>
+          <select id="ppSort">${sortOpts}</select>
+          <label>Default Duration (minutes)</label>
+          <input id="ppDuration" type="number" min="5" max="480" step="5" value="${pprefs.defaultDuration || 30}">
+          <button class="btn btn-primary" style="margin-top:12px" id="ppSave">Save</button>
         </div>
       `;
+      q('#ppSave').addEventListener('click', () => {
+        const p = {
+          defaultDay: parseInt(q('#ppDay').value),
+          sort: q('#ppSort').value,
+          defaultDuration: parseInt(q('#ppDuration').value) || 30,
+        };
+        localStorage.setItem('personalPrefs', JSON.stringify(p));
+        showToast('Personal preferences saved!');
+      });
       break;
+    }
   }
+  refreshIcons();
 }
 
 function showToast(msg) {
@@ -1080,9 +1051,6 @@ function showToast(msg) {
   setTimeout(() => t.remove(), 2500);
 }
 
-// ═══════════════════════════════════════════════════════
-// MODAL UTILS
-// ═══════════════════════════════════════════════════════
 function showModal(html) {
   modalContent.innerHTML = html;
   modalOverlay.classList.add('open');
@@ -1092,14 +1060,10 @@ function closeModal() {
   modalOverlay.classList.remove('open');
 }
 
-// Close on backdrop click
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) closeModal();
 });
 
-// ═══════════════════════════════════════════════════════
-// UTILS
-// ═══════════════════════════════════════════════════════
 function esc(str) {
   if (!str) return '';
   const div = document.createElement('div');
@@ -1111,5 +1075,4 @@ function fmtDate(d) {
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
 
-// ─── Boot ────────────────────────────────────────────────
 init();
