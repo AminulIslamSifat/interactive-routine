@@ -1,16 +1,17 @@
 [project]
 name = "interactive-routine"
 version = "0.1.0"
-description = "Interactive class routine viewer for RUET CSE with live schedule support"
-requires-python = ">=3.10"
-license = { text = "MIT" }
-authors = [{ name = "Aminul Islam Sifat" }]
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "AminulIslamSifat", email = "aminulislamsifat5@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
 
 [project.scripts]
-interactive-routine = "server:main"
+interactive-routine = "interactive_routine:main"
 
-[tool.poetry]
-package-mode = false
-
-[tool.uv]
-dev-dependencies = []
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"
