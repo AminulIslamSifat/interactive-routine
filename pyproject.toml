@@ -1,0 +1,13 @@
+[project]
+name = "interactive-routine"
+version = "0.1.0"
+description = "Interactive class routine viewer for RUET CSE with live schedule support"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Aminul Islam Sifat" }]
+
+[project.scripts]
+interactive-routine = "server:main"
+
+[tool.uv]
+dev-dependencies = []
