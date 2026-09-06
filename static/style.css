@@ -494,6 +494,72 @@ body.light .modal {
 
 /* ─── Responsive ────────────────────────────────────── */
 @media (max-width: 768px) {
-  .sidebar { display: none; }
   :root { --sidebar-w: 0px; }
+
+  /* Layout: rail moves to bottom as horizontal nav */
+  body { flex-direction: column; }
+
+  .rail {
+    width: 100%; min-width: unset;
+    height: auto; margin: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 6px 8px;
+    border-radius: 0;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+  }
+  .rail-group { flex-direction: row; gap: 4px; }
+  .rail-btn { width: 44px; height: 44px; border-radius: var(--radius); }
+
+  /* Sidebar hidden on mobile */
+  .sidebar { display: none !important; }
+
+  /* Main content fills screen, bottom padding for rail */
+  .main {
+    height: calc(100dvh - 56px);
+    margin: 0;
+    border-radius: 0;
+    border: none;
+  }
+  .main-header { padding: 12px 16px; }
+  .main-header h2 { font-size: 15px; }
+  .main-body { padding: 12px; }
+
+  /* Routine table: horizontal scroll wrapper */
+  .routine-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .routine-table th, .routine-table td { min-width: 90px; padding: 10px 8px; }
+  .routine-table td .teacher { font-size: 10px; }
+
+  /* Calendar: smaller cells */
+  .cal-cell { min-height: 50px; padding: 4px 6px; }
+  .cal-cell .day-num { font-size: 12px; }
+  .cal-cell .event-dot { width: 4px; height: 4px; }
+  .cal-nav .cal-title { font-size: 14px; min-width: 130px; }
+  .cal-nav button { width: 30px; height: 30px; font-size: 16px; }
+
+  /* Day tabs: horizontal scroll */
+  .day-tabs { gap: 4px; padding: 8px 12px; }
+  .day-tab { padding: 6px 12px; font-size: 11px; }
+
+  /* Personal items: compact */
+  .personal-item { padding: 10px 12px; gap: 8px; }
+  .personal-item .item-title { font-size: 12px; }
+
+  /* Settings: stack vertically */
+  body[data-view="settings"] #viewSettings { flex-direction: column; }
+  #viewSettings .sidebar {
+    width: 100% !important; min-width: unset !important;
+    border-right: none; border-bottom: 1px solid var(--border);
+    max-height: 140px; overflow-y: auto;
+    display: flex !important;
+  }
+  #viewSettings .sb-title { padding: 12px; font-size: 13px; }
+
+  /* Modal: full-width on small screens */
+  .modal { width: 95%; max-width: 400px; padding: 20px; }
+  .modal h3 { font-size: 15px; }
 }
