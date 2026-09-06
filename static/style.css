@@ -501,10 +501,10 @@ body.light .modal {
 
   .rail {
     width: 100%; min-width: unset;
-    height: auto; margin: 0;
+    height: 56px; margin: 0;
     flex-direction: row;
     justify-content: space-around;
-    padding: 6px 8px;
+    padding: 0 8px;
     border-radius: 0;
     position: fixed; bottom: 0; left: 0; right: 0;
     z-index: 200;
@@ -512,22 +512,30 @@ body.light .modal {
     border-top: 1px solid var(--border);
     box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
   }
-  .rail-group { flex-direction: row; gap: 4px; }
+  .rail-group { flex-direction: row; gap: 4px; align-items: center; }
   .rail-btn { width: 44px; height: 44px; border-radius: var(--radius); }
+
+  /* Active indicator: bottom bar instead of left bar */
+  .rail-btn.active::before {
+    left: 50%; top: auto; bottom: -2px;
+    transform: translateX(-50%);
+    width: 18px; height: 3px;
+    border-radius: 3px 3px 0 0;
+  }
 
   /* Sidebar hidden on mobile */
   .sidebar { display: none !important; }
 
-  /* Main content fills screen, bottom padding for rail */
+  /* Main content fills screen, bottom padding for fixed rail */
   .main {
-    height: calc(100dvh - 56px);
+    height: 100dvh;
     margin: 0;
     border-radius: 0;
     border: none;
   }
   .main-header { padding: 12px 16px; }
   .main-header h2 { font-size: 15px; }
-  .main-body { padding: 12px; }
+  .main-body { padding: 12px 12px 68px 12px; }
 
   /* Routine table: horizontal scroll wrapper */
   .routine-table { display: block; overflow-x: auto; white-space: nowrap; }
