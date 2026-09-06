@@ -1,0 +1,211 @@
+{
+  "year": "4",
+  "semester": "2",
+  "section": "A",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA",
+      "room": "104"
+    },
+    {
+      "day": "Saturday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 4203",
+      "teacher": "SUZ",
+      "room": "104"
+    },
+    {
+      "day": "Saturday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 4204",
+      "teacher": "SUZ",
+      "room": "PG Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 0,
+      "span": 3,
+      "course": "CSE 4000",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 4202 / CSE 4206",
+      "teacher": "SA/(MIT/SIA)",
+      "room": "ACL Lab / NW Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "NOS/SAM",
+      "room": "202"
+    },
+    {
+      "day": "Sunday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 4209",
+      "teacher": "KZN/FF",
+      "room": "202"
+    },
+    {
+      "day": "Monday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 4203",
+      "teacher": "SUZ",
+      "room": "104"
+    },
+    {
+      "day": "Monday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 4203",
+      "teacher": "SUZ",
+      "room": "104"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "MIT/SIA",
+      "room": "Seminar"
+    },
+    {
+      "day": "Monday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "MIT/SIA",
+      "room": "Seminar"
+    },
+    {
+      "day": "Monday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 4208",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "NOS",
+      "room": "202"
+    },
+    {
+      "day": "Tuesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 4209",
+      "teacher": "KZN/FF",
+      "room": "202"
+    },
+    {
+      "day": "Tuesday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA",
+      "room": "202"
+    },
+    {
+      "day": "Wednesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 4209",
+      "teacher": "KZN/FF",
+      "room": "Seminar"
+    },
+    {
+      "day": "Wednesday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA",
+      "room": "Seminar"
+    },
+    {
+      "day": "Wednesday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "SAM",
+      "room": "203"
+    },
+    {
+      "day": "Wednesday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "MIT/SIA",
+      "room": "203"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "SA",
+      "course": "CSE 4201"
+    },
+    {
+      "name": "SUZ",
+      "course": "CSE 4203"
+    },
+    {
+      "name": "SA/(MIT/SIA)",
+      "course": "CSE 4202 / CSE 4206"
+    },
+    {
+      "name": "NOS/SAM",
+      "course": "CSE 4211"
+    },
+    {
+      "name": "KZN/FF",
+      "course": "CSE 4209"
+    },
+    {
+      "name": "MIT/SIA",
+      "course": "CSE 4205"
+    },
+    {
+      "name": "NOS",
+      "course": "CSE 4211"
+    },
+    {
+      "name": "SAM",
+      "course": "CSE 4211"
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "year": "1",
+  "semester": "1",
+  "section": "B",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 0,
+      "span": 1,
+      "course": "CLASS TEST",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Saturday",
+      "period": 1,
+      "span": 1,
+      "course": "Chem 1113",
+      "teacher": "OKG",
+      "room": "Seminar"
+    },
+    {
+      "day": "Saturday",
+      "period": 2,
+      "span": 1,
+      "course": "EEE 1151",
+      "teacher": "ABM",
+      "room": "Seminar"
+    },
+    {
+      "day": "Saturday",
+      "period": 3,
+      "span": 1,
+      "course": "Hum 1113",
+      "teacher": "SH",
+      "room": "103"
+    },
+    {
+      "day": "Saturday",
+      "period": 4,
+      "span": 1,
+      "course": "Math 1113",
+      "teacher": "MHU",
+      "room": "103"
+    },
+    {
+      "day": "Sunday",
+      "period": 0,
+      "span": 1,
+      "course": "CLASS TEST",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Sunday",
+      "period": 2,
+      "span": 1,
+      "course": "Chem 1113",
+      "teacher": "MAA",
+      "room": ""
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 1102",
+      "teacher": "NIM",
+      "room": "OS Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 1100",
+      "teacher": "MSH",
+      "room": "Seminar"
+    },
+    {
+      "day": "Monday",
+      "period": 0,
+      "span": 1,
+      "course": "CLASS TEST",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Monday",
+      "period": 1,
+      "span": 1,
+      "course": "Math 1113",
+      "teacher": "MHU",
+      "room": "303"
+    },
+    {
+      "day": "Monday",
+      "period": 2,
+      "span": 1,
+      "course": "Hum 1113",
+      "teacher": "AH",
+      "room": "303"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 3,
+      "course": "Chem 1114 / Hum 1114",
+      "teacher": "MAA/(MAR/OKG)",
+      "room": "Ad-309 / Chem Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 0,
+      "span": 1,
+      "course": "CLASS TEST",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Tuesday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 1101",
+      "teacher": "NIM",
+      "room": ""
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 1102",
+      "teacher": "NIM",
+      "room": "OS Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 6,
+      "span": 1,
+      "course": "Chem 1113",
+      "teacher": "OKG",
+      "room": "202"
+    },
+    {
+      "day": "Tuesday",
+      "period": 7,
+      "span": 1,
+      "course": "EEE 1151",
+      "teacher": "ABM",
+      "room": "202"
+    },
+    {
+      "day": "Wednesday",
+      "period": 0,
+      "span": 1,
+      "course": "CLASS TEST",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Wednesday",
+      "period": 1,
+      "span": 1,
+      "course": "Math 1113",
+      "teacher": "MZA",
+      "room": "103"
+    },
+    {
+      "day": "Wednesday",
+      "period": 2,
+      "span": 1,
+      "course": "Hum 1113",
+      "teacher": "AH",
+      "room": "103"
+    },
+    {
+      "day": "Wednesday",
+      "period": 3,
+      "span": 1,
+      "course": "EEE 1151",
+      "teacher": "ABM",
+      "room": "104"
+    },
+    {
+      "day": "Wednesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 1101",
+      "teacher": "NIM",
+      "room": "104"
+    },
+    {
+      "day": "Wednesday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 1101",
+      "teacher": "NIM",
+      "room": "104"
+    },
+    {
+      "day": "Wednesday",
+      "period": 6,
+      "span": 2,
+      "course": "EEE 1152",
+      "teacher": "ABM",
+      "room": "Measurement Lab"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "OKG",
+      "course": "Chem 1113"
+    },
+    {
+      "name": "ABM",
+      "course": "EEE 1151"
+    },
+    {
+      "name": "SH",
+      "course": "Hum 1113"
+    },
+    {
+      "name": "MHU",
+      "course": "Math 1113"
+    },
+    {
+      "name": "MAA",
+      "course": "Chem 1113"
+    },
+    {
+      "name": "NIM",
+      "course": "CSE 1102"
+    },
+    {
+      "name": "MSH",
+      "course": "CSE 1100"
+    },
+    {
+      "name": "AH",
+      "course": "Hum 1113"
+    },
+    {
+      "name": "MAA/(MAR/OKG)",
+      "course": "Chem 1114 / Hum 1114"
+    },
+    {
+      "name": "MZA",
+      "course": "Math 1113"
+    }
+  ]
+}

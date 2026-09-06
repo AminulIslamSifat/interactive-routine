@@ -1,0 +1,215 @@
+{
+  "year": "4",
+  "semester": "2",
+  "section": "B",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 0,
+      "span": 3,
+      "course": "CSE 4000",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Saturday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "MIT",
+      "room": "202"
+    },
+    {
+      "day": "Saturday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 4209",
+      "teacher": "FF",
+      "room": "202"
+    },
+    {
+      "day": "Saturday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "NOS/SAM",
+      "room": "202"
+    },
+    {
+      "day": "Saturday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 4206",
+      "teacher": "MIT",
+      "room": "NW Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 4203",
+      "teacher": "MRI",
+      "room": "104"
+    },
+    {
+      "day": "Sunday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "SAM",
+      "room": "104"
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 4204",
+      "teacher": "MRI",
+      "room": "PG Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 4202",
+      "teacher": "SA/MSH",
+      "room": "OS Lab"
+    },
+    {
+      "day": "Monday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "MIT",
+      "room": "103"
+    },
+    {
+      "day": "Monday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "MIT",
+      "room": "103"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 4209",
+      "teacher": "FF",
+      "room": "104"
+    },
+    {
+      "day": "Tuesday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 4203",
+      "teacher": "MRI",
+      "room": "102"
+    },
+    {
+      "day": "Tuesday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 4203",
+      "teacher": "MRI",
+      "room": "102"
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA/MSH",
+      "room": "102"
+    },
+    {
+      "day": "Tuesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA/MSH",
+      "room": "102"
+    },
+    {
+      "day": "Wednesday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA/MSH",
+      "room": "104"
+    },
+    {
+      "day": "Wednesday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "NOS",
+      "room": "104"
+    },
+    {
+      "day": "Wednesday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 4209",
+      "teacher": "FF",
+      "room": "101"
+    },
+    {
+      "day": "Wednesday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 4208",
+      "teacher": "",
+      "room": ""
+    }
+  ],
+  "teachers": [
+    {
+      "name": "MIT",
+      "course": "CSE 4205"
+    },
+    {
+      "name": "FF",
+      "course": "CSE 4209"
+    },
+    {
+      "name": "NOS/SAM",
+      "course": "CSE 4211"
+    },
+    {
+      "name": "MRI",
+      "course": "CSE 4203"
+    },
+    {
+      "name": "SAM",
+      "course": "CSE 4211"
+    },
+    {
+      "name": "SA/MSH",
+      "course": "CSE 4202"
+    },
+    {
+      "name": "NOS",
+      "course": "CSE 4211"
+    }
+  ]
+}

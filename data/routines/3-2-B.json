@@ -1,0 +1,211 @@
+{
+  "year": "3",
+  "semester": "2",
+  "section": "B",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 3207",
+      "teacher": "SAM",
+      "room": "102"
+    },
+    {
+      "day": "Saturday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "SA/MSH",
+      "room": "102"
+    },
+    {
+      "day": "Saturday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3204",
+      "teacher": "SA/MSH",
+      "room": "HW Lab"
+    },
+    {
+      "day": "Saturday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MTI",
+      "room": "103"
+    },
+    {
+      "day": "Saturday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MTI",
+      "room": "103"
+    },
+    {
+      "day": "Sunday",
+      "period": 0,
+      "span": 3,
+      "course": "CSE 3200",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3210",
+      "teacher": "MTI",
+      "room": "HPCL  Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3201",
+      "teacher": "SIA",
+      "room": "104"
+    },
+    {
+      "day": "Sunday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MTI",
+      "room": "104"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 3207",
+      "teacher": "SAM",
+      "room": "101"
+    },
+    {
+      "day": "Monday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 3207",
+      "teacher": "SAM",
+      "room": "101"
+    },
+    {
+      "day": "Monday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 3201",
+      "teacher": "SIA",
+      "room": "101"
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3202 / CSE 3208",
+      "teacher": "SIA/SAM",
+      "room": "ACL Lab / SW Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "SA/MSH",
+      "room": "102"
+    },
+    {
+      "day": "Tuesday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "EKH/FP",
+      "room": "102"
+    },
+    {
+      "day": "Wednesday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 3201",
+      "teacher": "SIA",
+      "room": "202"
+    },
+    {
+      "day": "Wednesday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "SA/MSH",
+      "room": "202"
+    },
+    {
+      "day": "Wednesday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3206",
+      "teacher": "EKH/FP",
+      "room": "NW Lab"
+    },
+    {
+      "day": "Wednesday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "EKH/FP",
+      "room": "104"
+    },
+    {
+      "day": "Wednesday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "EKH/FP",
+      "room": "104"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "SAM",
+      "course": "CSE 3207"
+    },
+    {
+      "name": "SA/MSH",
+      "course": "CSE 3203"
+    },
+    {
+      "name": "MTI",
+      "course": "CSE 3209"
+    },
+    {
+      "name": "SIA",
+      "course": "CSE 3201"
+    },
+    {
+      "name": "SIA/SAM",
+      "course": "CSE 3202 / CSE 3208"
+    },
+    {
+      "name": "EKH/FP",
+      "course": "CSE 3205"
+    }
+  ]
+}

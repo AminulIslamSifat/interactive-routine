@@ -7,10 +7,6 @@ build/
 
 # Data (contains secrets & generated content)
 data/.cookie
-data/config.json
-data/personal.json
-data/schedules.json
-data/routines/
 data/.editor_tools_backups/
 
 # Editor / IDE

@@ -1,0 +1,215 @@
+{
+  "year": "3",
+  "semester": "2",
+  "section": "C",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MIT/MTI",
+      "room": "203"
+    },
+    {
+      "day": "Saturday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 3201",
+      "teacher": "FAR/SIA",
+      "room": "203"
+    },
+    {
+      "day": "Saturday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3202",
+      "teacher": "FAR/SIA",
+      "room": "HPCL  Lab"
+    },
+    {
+      "day": "Saturday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3207",
+      "teacher": "NOS",
+      "room": "102"
+    },
+    {
+      "day": "Saturday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3207",
+      "teacher": "NOS",
+      "room": "102"
+    },
+    {
+      "day": "Sunday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "MSH",
+      "room": "Seminar"
+    },
+    {
+      "day": "Sunday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MIT/MTI",
+      "room": "Seminar"
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3204",
+      "teacher": "MSH",
+      "room": "HW Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "FP",
+      "room": "201"
+    },
+    {
+      "day": "Sunday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3201",
+      "teacher": "FAR/SIA",
+      "room": "201"
+    },
+    {
+      "day": "Monday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "FP",
+      "room": "202"
+    },
+    {
+      "day": "Monday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 3201",
+      "teacher": "FAR/SIA",
+      "room": "202"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3206",
+      "teacher": "FP",
+      "room": "NW Lab"
+    },
+    {
+      "day": "Monday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 3208",
+      "teacher": "NOS",
+      "room": "HPCL  Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 0,
+      "span": 3,
+      "course": "CSE 3200",
+      "teacher": "",
+      "room": ""
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 3210",
+      "teacher": "MIT/MTI",
+      "room": "HPCL  Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "FP",
+      "room": "203"
+    },
+    {
+      "day": "Tuesday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "MSH",
+      "room": "203"
+    },
+    {
+      "day": "Wednesday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 3207",
+      "teacher": "NOS",
+      "room": "102"
+    },
+    {
+      "day": "Wednesday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MIT/MTI",
+      "room": "102"
+    },
+    {
+      "day": "Wednesday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "MSH",
+      "room": "102"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "MIT/MTI",
+      "course": "CSE 3209"
+    },
+    {
+      "name": "FAR/SIA",
+      "course": "CSE 3201"
+    },
+    {
+      "name": "NOS",
+      "course": "CSE 3207"
+    },
+    {
+      "name": "MSH",
+      "course": "CSE 3203"
+    },
+    {
+      "name": "FP",
+      "course": "CSE 3205"
+    }
+  ]
+}

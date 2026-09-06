@@ -1,0 +1,215 @@
+{
+  "year": "2",
+  "semester": "1",
+  "section": "A",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 3,
+      "span": 1,
+      "course": "Hum 2113",
+      "teacher": "TKS",
+      "room": "203"
+    },
+    {
+      "day": "Saturday",
+      "period": 4,
+      "span": 1,
+      "course": "Math 2113",
+      "teacher": "MSR",
+      "room": "203"
+    },
+    {
+      "day": "Saturday",
+      "period": 5,
+      "span": 1,
+      "course": "EEE 2151",
+      "teacher": "MMI",
+      "room": "203"
+    },
+    {
+      "day": "Sunday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 2103",
+      "teacher": "BA",
+      "room": "203"
+    },
+    {
+      "day": "Sunday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 2103",
+      "teacher": "BA",
+      "room": "203"
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 1,
+      "course": "Hum 2113",
+      "teacher": "TKS",
+      "room": "103"
+    },
+    {
+      "day": "Sunday",
+      "period": 4,
+      "span": 1,
+      "course": "EEE 2151",
+      "teacher": "MMI",
+      "room": "103"
+    },
+    {
+      "day": "Sunday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 2101",
+      "teacher": "UD",
+      "room": "103"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2104 / CSE 2102",
+      "teacher": "BA/UD",
+      "room": "HW Lab / PG Lab"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 2101",
+      "teacher": "UD",
+      "room": "201"
+    },
+    {
+      "day": "Monday",
+      "period": 4,
+      "span": 1,
+      "course": "Hum 2113",
+      "teacher": "NF1",
+      "room": "201"
+    },
+    {
+      "day": "Monday",
+      "period": 5,
+      "span": 1,
+      "course": "Math 2113",
+      "teacher": "MSR",
+      "room": "201"
+    },
+    {
+      "day": "Monday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2104",
+      "teacher": "BA",
+      "room": "HW Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 1,
+      "span": 1,
+      "course": "Math 2113",
+      "teacher": "AH",
+      "room": "104"
+    },
+    {
+      "day": "Tuesday",
+      "period": 2,
+      "span": 1,
+      "course": "EEE 2151",
+      "teacher": "MMI",
+      "room": "104"
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 2103",
+      "teacher": "BA",
+      "room": "104"
+    },
+    {
+      "day": "Tuesday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2102",
+      "teacher": "UD",
+      "room": "SW Lab"
+    },
+    {
+      "day": "Wednesday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 2101",
+      "teacher": "UD",
+      "room": "101"
+    },
+    {
+      "day": "Wednesday",
+      "period": 3,
+      "span": 3,
+      "course": "EEE 2152",
+      "teacher": "AM",
+      "room": "Machine Lab(West)"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "TKS",
+      "course": "Hum 2113"
+    },
+    {
+      "name": "MSR",
+      "course": "Math 2113"
+    },
+    {
+      "name": "MMI",
+      "course": "EEE 2151"
+    },
+    {
+      "name": "BA",
+      "course": "CSE 2103"
+    },
+    {
+      "name": "UD",
+      "course": "CSE 2101"
+    },
+    {
+      "name": "BA/UD",
+      "course": "CSE 2104 / CSE 2102"
+    },
+    {
+      "name": "NF1",
+      "course": "Hum 2113"
+    },
+    {
+      "name": "AH",
+      "course": "Math 2113"
+    },
+    {
+      "name": "AM",
+      "course": "EEE 2152"
+    }
+  ]
+}

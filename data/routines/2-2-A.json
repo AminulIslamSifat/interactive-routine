@@ -1,0 +1,235 @@
+{
+  "year": "2",
+  "semester": "2",
+  "section": "A",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 2206",
+      "teacher": "SZM",
+      "room": "NW Lab"
+    },
+    {
+      "day": "Saturday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2204",
+      "teacher": "SA",
+      "room": "OS Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "SA",
+      "room": "202"
+    },
+    {
+      "day": "Sunday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "SZM",
+      "room": "202"
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 1,
+      "course": "Math 2213",
+      "teacher": "MBH",
+      "room": "202"
+    },
+    {
+      "day": "Sunday",
+      "period": 4,
+      "span": 1,
+      "course": "Hum 2213",
+      "teacher": "ABS",
+      "room": "202"
+    },
+    {
+      "day": "Sunday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 2201",
+      "teacher": "MIT/KZN",
+      "room": "202"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2206",
+      "teacher": "SZM",
+      "room": "ACL Lab"
+    },
+    {
+      "day": "Monday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "SA",
+      "room": "Seminar"
+    },
+    {
+      "day": "Monday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "SA",
+      "room": "Seminar"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 2202",
+      "teacher": "KZN",
+      "room": "OS Lab"
+    },
+    {
+      "day": "Monday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2200",
+      "teacher": "NIM",
+      "room": "101"
+    },
+    {
+      "day": "Tuesday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 2201",
+      "teacher": "MIT/KZN",
+      "room": "Seminar"
+    },
+    {
+      "day": "Tuesday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 2201",
+      "teacher": "MIT/KZN",
+      "room": "Seminar"
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 1,
+      "course": "Hum 2213",
+      "teacher": "ABS",
+      "room": "103"
+    },
+    {
+      "day": "Tuesday",
+      "period": 4,
+      "span": 1,
+      "course": "Math 2213",
+      "teacher": "MRK",
+      "room": "103"
+    },
+    {
+      "day": "Tuesday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2202",
+      "teacher": "MIT",
+      "room": "NW Lab"
+    },
+    {
+      "day": "Wednesday",
+      "period": 1,
+      "span": 1,
+      "course": "Math 2213",
+      "teacher": "MRK",
+      "room": "102"
+    },
+    {
+      "day": "Wednesday",
+      "period": 2,
+      "span": 1,
+      "course": "Hum 2213",
+      "teacher": "SI",
+      "room": "102"
+    },
+    {
+      "day": "Wednesday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "SZM",
+      "room": "102"
+    },
+    {
+      "day": "Wednesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "SZM",
+      "room": "102"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "SZM",
+      "course": "CSE 2206"
+    },
+    {
+      "name": "SA",
+      "course": "CSE 2204"
+    },
+    {
+      "name": "MBH",
+      "course": "Math 2213"
+    },
+    {
+      "name": "ABS",
+      "course": "Hum 2213"
+    },
+    {
+      "name": "MIT/KZN",
+      "course": "CSE 2201"
+    },
+    {
+      "name": "KZN",
+      "course": "CSE 2202"
+    },
+    {
+      "name": "NIM",
+      "course": "CSE 2200"
+    },
+    {
+      "name": "MRK",
+      "course": "Math 2213"
+    },
+    {
+      "name": "MIT",
+      "course": "CSE 2202"
+    },
+    {
+      "name": "SI",
+      "course": "Hum 2213"
+    }
+  ]
+}

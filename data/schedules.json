@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "date": "2026-09-08",
+    "time": "10:00 AM",
+    "title": "DSA Lab Quiz",
+    "content": "Chapters 5-7: Trees, BST, AVL. Bring lab notebook."
+  },
+  {
+    "id": 2,
+    "date": "2026-09-10",
+    "time": "2:00 PM",
+    "title": "Math III Tutorial Submission",
+    "content": "Chapter 4 problem set. Submit to room 204."
+  },
+  {
+    "id": 3,
+    "date": "2026-09-15",
+    "time": "9:00 AM",
+    "title": "Software Eng Mid",
+    "content": "Syllabus: Agile, UML, Design Patterns. 40 marks."
+  },
+  {
+    "id": 4,
+    "date": "2026-09-18",
+    "time": "11:30 AM",
+    "title": "Numerical Methods Assignment",
+    "content": "Newton-Raphson + Gauss Elimination problems."
+  },
+  {
+    "id": 5,
+    "date": "2026-09-22",
+    "time": "10:00 AM",
+    "title": "DSA Mid Term",
+    "content": "Full syllabus up to Graphs. 3 hours."
+  }
+]

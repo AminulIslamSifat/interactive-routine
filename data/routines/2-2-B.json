@@ -1,0 +1,223 @@
+{
+  "year": "2",
+  "semester": "2",
+  "section": "B",
+  "periods": [
+    "8:00am–8:50am",
+    "8:50am–9:40am",
+    "9:40am–10:30am",
+    "10:50am–11:40am",
+    "11:40am–12:30pm",
+    "12:30pm–1:20pm",
+    "2:30pm–3:20pm",
+    "3:20pm–4:10pm",
+    "4:10pm–5:00pm"
+  ],
+  "days": [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "slots": [
+    {
+      "day": "Saturday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2206",
+      "teacher": "MSH",
+      "room": "SW Lab"
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 2201",
+      "teacher": "MIT",
+      "room": "101"
+    },
+    {
+      "day": "Sunday",
+      "period": 4,
+      "span": 1,
+      "course": "Math 2213",
+      "teacher": "MBH",
+      "room": "101"
+    },
+    {
+      "day": "Sunday",
+      "period": 5,
+      "span": 1,
+      "course": "Hum 2213",
+      "teacher": "ABS",
+      "room": "101"
+    },
+    {
+      "day": "Sunday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2204",
+      "teacher": "SA/AYS",
+      "room": "NW Lab"
+    },
+    {
+      "day": "Monday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "MSH",
+      "room": "203"
+    },
+    {
+      "day": "Monday",
+      "period": 2,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "MSH",
+      "room": "203"
+    },
+    {
+      "day": "Monday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 2201",
+      "teacher": "MIT",
+      "room": "203"
+    },
+    {
+      "day": "Monday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 2201",
+      "teacher": "MIT",
+      "room": "203"
+    },
+    {
+      "day": "Monday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2202",
+      "teacher": "MIT",
+      "room": "ACL Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 2,
+      "span": 1,
+      "course": "Hum 2213",
+      "teacher": "ABS",
+      "room": "203"
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 1,
+      "course": "Math 2213",
+      "teacher": "MRK",
+      "room": "203"
+    },
+    {
+      "day": "Tuesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "SA/AYS",
+      "room": "203"
+    },
+    {
+      "day": "Tuesday",
+      "period": 5,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "MSH",
+      "room": "203"
+    },
+    {
+      "day": "Tuesday",
+      "period": 6,
+      "span": 2,
+      "course": "CSE 2200",
+      "teacher": "NIM/NOS",
+      "room": "101"
+    },
+    {
+      "day": "Wednesday",
+      "period": 1,
+      "span": 1,
+      "course": "Hum 2213",
+      "teacher": "SI",
+      "room": "Seminar"
+    },
+    {
+      "day": "Wednesday",
+      "period": 2,
+      "span": 1,
+      "course": "Math 2213",
+      "teacher": "MRK",
+      "room": "Seminar"
+    },
+    {
+      "day": "Wednesday",
+      "period": 3,
+      "span": 3,
+      "course": "CSE 2206 / CSE 2202",
+      "teacher": "MSH/MIT",
+      "room": "ACL Lab / SW Lab"
+    },
+    {
+      "day": "Wednesday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "SA/AYS",
+      "room": "202"
+    },
+    {
+      "day": "Wednesday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "SA/AYS",
+      "room": "202"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "MSH",
+      "course": "CSE 2206"
+    },
+    {
+      "name": "MIT",
+      "course": "CSE 2201"
+    },
+    {
+      "name": "MBH",
+      "course": "Math 2213"
+    },
+    {
+      "name": "ABS",
+      "course": "Hum 2213"
+    },
+    {
+      "name": "SA/AYS",
+      "course": "CSE 2204"
+    },
+    {
+      "name": "MRK",
+      "course": "Math 2213"
+    },
+    {
+      "name": "NIM/NOS",
+      "course": "CSE 2200"
+    },
+    {
+      "name": "SI",
+      "course": "Hum 2213"
+    },
+    {
+      "name": "MSH/MIT",
+      "course": "CSE 2206 / CSE 2202"
+    }
+  ]
+}
