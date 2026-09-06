@@ -909,8 +909,14 @@ const SETTINGS_TABS = [
   { id: 'personal', label: 'Personal', icon: 'check-circle' },
 ];
 
+let settingsMobileDrill = false; // true when on mobile viewing tab content
+
+function isMobile() { return window.innerWidth <= 768; }
+
 function renderSettingsView() {
   const nav = $('#settingsNav');
+  const sidebar = $('#viewSettings .sidebar');
+  const mainArea = $('#viewSettings .main-area');
   nav.innerHTML = '';
 
   SETTINGS_TABS.forEach(tab => {
@@ -919,22 +925,68 @@ function renderSettingsView() {
     card.innerHTML = `<div class="card-title">${tab.icon} ${tab.label}</div>`;
     card.addEventListener('click', () => {
       settingsTab = tab.id;
-      nav.querySelectorAll('.sb-card').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      renderSettingsContent();
+      if (isMobile()) {
+        settingsMobileDrill = true;
+        sidebar.style.display = 'none';
+        mainArea.style.display = 'flex';
+        renderSettingsContent();
+      } else {
+        nav.querySelectorAll('.sb-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        renderSettingsContent();
+      }
     });
     nav.appendChild(card);
   });
 
-  renderSettingsContent();
+  if (isMobile()) {
+    // Show tab list only; content hidden until a tab is tapped
+    sidebar.style.display = 'flex';
+    mainArea.style.display = 'none';
+    settingsMobileDrill = false;
+  } else {
+    sidebar.style.display = '';
+    mainArea.style.display = '';
+    settingsMobileDrill = false;
+    renderSettingsContent();
+  }
+}
+
+function settingsBackToList() {
+  settingsMobileDrill = false;
+  const sidebar = $('#viewSettings .sidebar');
+  const mainArea = $('#viewSettings .main-area');
+  sidebar.style.display = 'flex';
+  mainArea.style.display = 'none';
 }
 
 function renderSettingsContent() {
   const body = $('#settingsBody');
 
+  // Mobile back button header
+  if (isMobile() && settingsMobileDrill) {
+    const tabLabel = SETTINGS_TABS.find(t => t.id === settingsTab)?.label || '';
+    body.innerHTML = `
+      <div class="settings-mobile-header">
+        <button class="btn settings-back-btn" id="settingsBackBtn">← ${tabLabel}</button>
+      </div>
+      <div id="settingsContentInner"></div>
+    `;
+    $('#settingsBackBtn').addEventListener('click', settingsBackToList);
+    // Render actual content into inner container
+    const inner = $('#settingsContentInner');
+    renderSettingsTabContent(inner);
+    return;
+  }
+
+  renderSettingsTabContent(body);
+}
+
+function renderSettingsTabContent(container) {
+  const q = (sel) => container.querySelector(sel);
   switch (settingsTab) {
     case 'general':
-      body.innerHTML = `
+      container.innerHTML = `
         <h3 style="margin-bottom:16px">General</h3>
         <div class="sb-card" style="padding:16px">
           <div class="card-title"><i data-lucide="user" class="ic-sm"></i> Profile</div>
@@ -962,11 +1014,11 @@ function renderSettingsContent() {
           <button class="btn btn-primary" style="margin-top:12px" id="setSaveProfile">Save</button>
         </div>
       `;
-      $('#setSaveProfile').addEventListener('click', async () => {
-        config.roll = $('#setRoll').value.trim();
-        config.year = $('#setYear').value;
-        config.semester = $('#setSem').value;
-        config.section = $('#setSection').value;
+      q('#setSaveProfile').addEventListener('click', async () => {
+        config.roll = q('#setRoll').value.trim();
+        config.year = q('#setYear').value;
+        config.semester = q('#setSem').value;
+        config.section = q('#setSection').value;
         await apiPut('/api/config', config);
         await loadRoutine();
         showToast('Profile saved!');
@@ -974,7 +1026,7 @@ function renderSettingsContent() {
       break;
 
     case 'appearance':
-      body.innerHTML = `
+      container.innerHTML = `
         <h3 style="margin-bottom:16px">Appearance</h3>
         <div class="sb-card" style="padding:16px">
           <div class="card-title"><i data-lucide="palette" class="ic-sm"></i> Theme</div>
@@ -982,14 +1034,14 @@ function renderSettingsContent() {
           <button class="btn" id="setTheme">Toggle Dark/Light</button>
         </div>
       `;
-      $('#setTheme').addEventListener('click', () => {
+      q('#setTheme').addEventListener('click', () => {
         document.body.classList.toggle('light');
         localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
       });
       break;
 
     case 'routine':
-      body.innerHTML = `
+      container.innerHTML = `
         <h3 style="margin-bottom:16px">Routine Settings</h3>
         <div class="sb-card" style="padding:16px">
           <div class="card-title"><i data-lucide="book-open" class="ic-sm"></i> Class Routine</div>
@@ -999,7 +1051,7 @@ function renderSettingsContent() {
       break;
 
     case 'schedule':
-      body.innerHTML = `
+      container.innerHTML = `
         <h3 style="margin-bottom:16px">Schedule Settings</h3>
         <div class="sb-card" style="padding:16px">
           <div class="card-title"><i data-lucide="calendar" class="ic-sm"></i> Schedule</div>
@@ -1009,7 +1061,7 @@ function renderSettingsContent() {
       break;
 
     case 'personal':
-      body.innerHTML = `
+      container.innerHTML = `
         <h3 style="margin-bottom:16px">Personal Routine Settings</h3>
         <div class="sb-card" style="padding:16px">
           <div class="card-title"><i data-lucide="check-circle" class="ic-sm"></i> Personal Routine</div>

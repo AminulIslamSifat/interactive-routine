@@ -523,8 +523,8 @@ body.light .modal {
     border-radius: 3px 3px 0 0;
   }
 
-  /* Sidebar hidden on mobile */
-  .sidebar { display: none !important; }
+  /* Sidebar hidden on mobile (except settings internal sidebar) */
+  body > .sidebar { display: none !important; }
 
   /* Main content fills screen, bottom padding for fixed rail */
   .main {
@@ -557,15 +557,38 @@ body.light .modal {
   .personal-item { padding: 10px 12px; gap: 8px; }
   .personal-item .item-title { font-size: 12px; }
 
-  /* Settings: stack vertically */
+  /* Settings: drill-down pattern on mobile */
   body[data-view="settings"] #viewSettings { flex-direction: column; }
   #viewSettings .sidebar {
     width: 100% !important; min-width: unset !important;
-    border-right: none; border-bottom: 1px solid var(--border);
-    max-height: 140px; overflow-y: auto;
-    display: flex !important;
+    height: 100dvh !important; max-height: unset !important;
+    border-right: none; border-bottom: none;
+    margin: 0; border-radius: 0;
+    overflow-y: auto;
   }
-  #viewSettings .sb-title { padding: 12px; font-size: 13px; }
+  #viewSettings .sb-title { padding: 16px; font-size: 15px; font-weight: 600; }
+  #viewSettings .sb-body { padding: 12px; gap: 8px; }
+  #viewSettings .sb-card { padding: 14px 16px; }
+  #viewSettings .sb-card .card-title { font-size: 14px; }
+  #viewSettings .main-area {
+    height: 100dvh;
+  }
+
+  /* Mobile settings back button */
+  .settings-mobile-header {
+    position: sticky; top: 0; z-index: 10;
+    padding: 12px 16px;
+    background: var(--bg-base);
+    border-bottom: 1px solid var(--border);
+  }
+  .settings-back-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; font-weight: 600;
+    padding: 8px 16px;
+    color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    background: color-mix(in srgb, var(--accent) 10%, transparent) !important;
+  }
 
   /* Modal: full-width on small screens */
   .modal { width: 95%; max-width: 400px; padding: 20px; }
