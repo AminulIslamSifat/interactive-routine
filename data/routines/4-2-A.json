@@ -23,43 +23,43 @@
   "slots": [
     {
       "day": "Saturday",
-      "period": 1,
-      "span": 1,
-      "course": "CSE 4201",
-      "teacher": "SA",
-      "room": "104"
-    },
-    {
-      "day": "Saturday",
-      "period": 2,
-      "span": 1,
-      "course": "CSE 4203",
-      "teacher": "SUZ",
-      "room": "104"
-    },
-    {
-      "day": "Saturday",
-      "period": 3,
+      "period": 0,
       "span": 3,
       "course": "CSE 4204",
       "teacher": "SUZ",
       "room": "PG Lab"
     },
     {
+      "day": "Saturday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA",
+      "room": "201"
+    },
+    {
+      "day": "Saturday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "SIA",
+      "room": "201"
+    },
+    {
       "day": "Sunday",
       "period": 0,
       "span": 3,
-      "course": "CSE 4000",
-      "teacher": "",
-      "room": ""
+      "course": "CSE 4202 / CSE 4206",
+      "teacher": "SA/(MIT/SIA)",
+      "room": "ACL Lab / NW Lab"
     },
     {
       "day": "Sunday",
       "period": 3,
       "span": 3,
-      "course": "CSE 4202 / CSE 4206",
-      "teacher": "SA/(MIT/SIA)",
-      "room": "ACL Lab / NW Lab"
+      "course": "CSE 4000",
+      "teacher": "",
+      "room": ""
     },
     {
       "day": "Sunday",
@@ -79,47 +79,47 @@
     },
     {
       "day": "Monday",
-      "period": 1,
-      "span": 1,
-      "course": "CSE 4203",
-      "teacher": "SUZ",
-      "room": "104"
-    },
-    {
-      "day": "Monday",
       "period": 2,
       "span": 1,
-      "course": "CSE 4203",
-      "teacher": "SUZ",
+      "course": "CSE 4205",
+      "teacher": "MIT/SIA",
       "room": "104"
     },
     {
       "day": "Monday",
       "period": 3,
       "span": 1,
-      "course": "CSE 4205",
-      "teacher": "MIT/SIA",
-      "room": "Seminar"
+      "course": "CSE 4203",
+      "teacher": "SUZ",
+      "room": "104"
     },
     {
       "day": "Monday",
       "period": 4,
       "span": 1,
-      "course": "CSE 4205",
-      "teacher": "MIT/SIA",
-      "room": "Seminar"
+      "course": "CSE 4203",
+      "teacher": "SUZ",
+      "room": "104"
     },
     {
       "day": "Monday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 4208",
       "teacher": "",
       "room": ""
     },
     {
       "day": "Tuesday",
-      "period": 3,
+      "period": 0,
+      "span": 1,
+      "course": "CSE 4209",
+      "teacher": "KZN/FF",
+      "room": "202"
+    },
+    {
+      "day": "Tuesday",
+      "period": 1,
       "span": 1,
       "course": "CSE 4211",
       "teacher": "NOS",
@@ -127,15 +127,7 @@
     },
     {
       "day": "Tuesday",
-      "period": 4,
-      "span": 1,
-      "course": "CSE 4209",
-      "teacher": "KZN/FF",
-      "room": "202"
-    },
-    {
-      "day": "Tuesday",
-      "period": 5,
+      "period": 2,
       "span": 1,
       "course": "CSE 4201",
       "teacher": "SA",
@@ -143,19 +135,19 @@
     },
     {
       "day": "Wednesday",
-      "period": 4,
+      "period": 3,
       "span": 1,
       "course": "CSE 4209",
       "teacher": "KZN/FF",
-      "room": "Seminar"
+      "room": "103"
     },
     {
       "day": "Wednesday",
-      "period": 5,
+      "period": 4,
       "span": 1,
-      "course": "CSE 4201",
-      "teacher": "SA",
-      "room": "Seminar"
+      "course": "CSE 4203",
+      "teacher": "SUZ",
+      "room": "103"
     },
     {
       "day": "Wednesday",
@@ -172,16 +164,28 @@
       "course": "CSE 4205",
       "teacher": "MIT/SIA",
       "room": "203"
+    },
+    {
+      "day": "Wednesday",
+      "period": 8,
+      "span": 1,
+      "course": "CSE 4201",
+      "teacher": "SA",
+      "room": "203"
     }
   ],
   "teachers": [
+    {
+      "name": "SUZ",
+      "course": "CSE 4204"
+    },
     {
       "name": "SA",
       "course": "CSE 4201"
     },
     {
-      "name": "SUZ",
-      "course": "CSE 4203"
+      "name": "SIA",
+      "course": "CSE 4205"
     },
     {
       "name": "SA/(MIT/SIA)",

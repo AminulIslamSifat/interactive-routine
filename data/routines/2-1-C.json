@@ -23,6 +23,14 @@
   "slots": [
     {
       "day": "Saturday",
+      "period": 2,
+      "span": 1,
+      "course": "Hum 2113",
+      "teacher": "TKS",
+      "room": "102"
+    },
+    {
+      "day": "Saturday",
       "period": 3,
       "span": 1,
       "course": "CSE 2103",
@@ -39,16 +47,8 @@
     },
     {
       "day": "Saturday",
-      "period": 5,
-      "span": 1,
-      "course": "Hum 2113",
-      "teacher": "TKS",
-      "room": "102"
-    },
-    {
-      "day": "Saturday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 2104",
       "teacher": "MZI",
       "room": "HW Lab"
@@ -72,18 +72,26 @@
     {
       "day": "Sunday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "EEE 2152",
       "teacher": "TSJ",
       "room": "Machine Lab(West)"
     },
     {
       "day": "Monday",
-      "period": 2,
+      "period": 1,
       "span": 1,
       "course": "CSE 2103",
       "teacher": "BA/MZI",
-      "room": "201"
+      "room": "103"
+    },
+    {
+      "day": "Monday",
+      "period": 2,
+      "span": 1,
+      "course": "EEE 2151",
+      "teacher": "MNA",
+      "room": "103"
     },
     {
       "day": "Monday",
@@ -103,19 +111,19 @@
     },
     {
       "day": "Monday",
-      "period": 5,
-      "span": 1,
-      "course": "EEE 2151",
-      "teacher": "MMI/MNA",
-      "room": "103"
-    },
-    {
-      "day": "Monday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 2102",
       "teacher": "FAR",
       "room": "NW Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 2101",
+      "teacher": "FAR",
+      "room": "101"
     },
     {
       "day": "Tuesday",
@@ -142,12 +150,12 @@
       "room": "101"
     },
     {
-      "day": "Tuesday",
-      "period": 5,
+      "day": "Wednesday",
+      "period": 3,
       "span": 1,
       "course": "CSE 2101",
       "teacher": "FAR",
-      "room": "101"
+      "room": "104"
     },
     {
       "day": "Wednesday",
@@ -155,20 +163,12 @@
       "span": 1,
       "course": "Math 2113",
       "teacher": "MSR",
-      "room": "101"
-    },
-    {
-      "day": "Wednesday",
-      "period": 5,
-      "span": 1,
-      "course": "CSE 2101",
-      "teacher": "FAR",
-      "room": "101"
+      "room": "104"
     },
     {
       "day": "Wednesday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 2104 / CSE 2102",
       "teacher": "BA/FAR",
       "room": "HW Lab / PG Lab"
@@ -176,12 +176,12 @@
   ],
   "teachers": [
     {
-      "name": "BA/MZI",
-      "course": "CSE 2103"
-    },
-    {
       "name": "TKS",
       "course": "Hum 2113"
+    },
+    {
+      "name": "BA/MZI",
+      "course": "CSE 2103"
     },
     {
       "name": "MZI",
@@ -198,6 +198,10 @@
     {
       "name": "TSJ",
       "course": "EEE 2152"
+    },
+    {
+      "name": "MNA",
+      "course": "EEE 2151"
     },
     {
       "name": "AH",

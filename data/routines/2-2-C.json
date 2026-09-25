@@ -23,23 +23,7 @@
   "slots": [
     {
       "day": "Saturday",
-      "period": 1,
-      "span": 1,
-      "course": "CSE 2203",
-      "teacher": "AYS",
-      "room": "202"
-    },
-    {
-      "day": "Saturday",
-      "period": 2,
-      "span": 1,
-      "course": "Math 2213",
-      "teacher": "MRK",
-      "room": "202"
-    },
-    {
-      "day": "Saturday",
-      "period": 3,
+      "period": 0,
       "span": 3,
       "course": "CSE 2202",
       "teacher": "KZN",
@@ -47,8 +31,16 @@
     },
     {
       "day": "Saturday",
+      "period": 3,
+      "span": 1,
+      "course": "Math 2213",
+      "teacher": "MRK",
+      "room": "202"
+    },
+    {
+      "day": "Saturday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 2204",
       "teacher": "AYS",
       "room": "ACL Lab"
@@ -59,7 +51,7 @@
       "span": 1,
       "course": "Hum 2213",
       "teacher": "ABS",
-      "room": "201"
+      "room": "102"
     },
     {
       "day": "Sunday",
@@ -67,14 +59,30 @@
       "span": 1,
       "course": "CSE 2201",
       "teacher": "KZN",
-      "room": "201"
+      "room": "102"
     },
     {
       "day": "Sunday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 2200",
       "teacher": "NOS",
+      "room": "102"
+    },
+    {
+      "day": "Monday",
+      "period": 0,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "AYS",
+      "room": "102"
+    },
+    {
+      "day": "Monday",
+      "period": 1,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "AYS",
       "room": "102"
     },
     {
@@ -83,43 +91,19 @@
       "span": 1,
       "course": "Math 2213",
       "teacher": "MBH",
-      "room": "101"
-    },
-    {
-      "day": "Monday",
-      "period": 3,
-      "span": 1,
-      "course": "CSE 2203",
-      "teacher": "AYS",
-      "room": "102"
-    },
-    {
-      "day": "Monday",
-      "period": 4,
-      "span": 1,
-      "course": "CSE 2205",
-      "teacher": "SZM",
-      "room": "102"
-    },
-    {
-      "day": "Monday",
-      "period": 5,
-      "span": 1,
-      "course": "CSE 2205",
-      "teacher": "SZM",
       "room": "102"
     },
     {
       "day": "Monday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 2206 / CSE 2202",
       "teacher": "MSH/KZN",
       "room": "PG Lab / OS Lab"
     },
     {
       "day": "Tuesday",
-      "period": 3,
+      "period": 1,
       "span": 1,
       "course": "CSE 2201",
       "teacher": "KZN",
@@ -127,19 +111,43 @@
     },
     {
       "day": "Tuesday",
-      "period": 4,
-      "span": 1,
-      "course": "Hum 2213",
-      "teacher": "ABS",
-      "room": "Seminar"
-    },
-    {
-      "day": "Tuesday",
-      "period": 5,
+      "period": 2,
       "span": 1,
       "course": "Math 2213",
       "teacher": "MRK",
       "room": "Seminar"
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
+      "span": 1,
+      "course": "CSE 2203",
+      "teacher": "AYS",
+      "room": "104"
+    },
+    {
+      "day": "Tuesday",
+      "period": 4,
+      "span": 1,
+      "course": "Hum 2213",
+      "teacher": "ABS",
+      "room": "104"
+    },
+    {
+      "day": "Tuesday",
+      "period": 6,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "SZM",
+      "room": "104"
+    },
+    {
+      "day": "Tuesday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 2205",
+      "teacher": "SZM",
+      "room": "101"
     },
     {
       "day": "Wednesday",
@@ -147,7 +155,7 @@
       "span": 1,
       "course": "CSE 2205",
       "teacher": "SZM/MSH",
-      "room": "203"
+      "room": "201"
     },
     {
       "day": "Wednesday",
@@ -161,14 +169,6 @@
       "day": "Wednesday",
       "period": 4,
       "span": 1,
-      "course": "CSE 2203",
-      "teacher": "AYS",
-      "room": "201"
-    },
-    {
-      "day": "Wednesday",
-      "period": 5,
-      "span": 1,
       "course": "CSE 2201",
       "teacher": "KZN",
       "room": "201"
@@ -176,7 +176,7 @@
     {
       "day": "Wednesday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 2206",
       "teacher": "SZM",
       "room": "ACL Lab"
@@ -184,16 +184,16 @@
   ],
   "teachers": [
     {
-      "name": "AYS",
-      "course": "CSE 2203"
+      "name": "KZN",
+      "course": "CSE 2202"
     },
     {
       "name": "MRK",
       "course": "Math 2213"
     },
     {
-      "name": "KZN",
-      "course": "CSE 2202"
+      "name": "AYS",
+      "course": "CSE 2204"
     },
     {
       "name": "ABS",
@@ -208,12 +208,12 @@
       "course": "Math 2213"
     },
     {
-      "name": "SZM",
-      "course": "CSE 2205"
-    },
-    {
       "name": "MSH/KZN",
       "course": "CSE 2206 / CSE 2202"
+    },
+    {
+      "name": "SZM",
+      "course": "CSE 2205"
     },
     {
       "name": "SZM/MSH",

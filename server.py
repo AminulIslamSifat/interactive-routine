@@ -32,6 +32,9 @@ def fetch_live_schedules() -> list:
     try:
         with urllib.request.urlopen(SCHEDULE_API, timeout=10) as resp:
             docs = json.loads(resp.read())
+        if not isinstance(docs, list):
+            print(f"[schedule] unexpected response type: {type(docs).__name__}")
+            return mapped
         for d in docs:
             parts = [d.get("teacher") or "", d.get("topic") or "", d.get("syllabus") or ""]
             mapped.append({
@@ -40,8 +43,10 @@ def fetch_live_schedules() -> list:
                 "title": f"{d.get('type') or ''}: {d.get('subject') or ''}".strip(": "),
                 "content": " • ".join(p for p in parts if p),
             })
-        _schedule_cache["data"] = mapped
-        _schedule_cache["expires_at"] = now + SCHEDULE_TTL
+        # Only cache if we got actual data; empty means fall back to local
+        if mapped:
+            _schedule_cache["data"] = mapped
+            _schedule_cache["expires_at"] = now + SCHEDULE_TTL
     except Exception as e:
         print(f"[schedule] live fetch failed: {e}")
     return mapped

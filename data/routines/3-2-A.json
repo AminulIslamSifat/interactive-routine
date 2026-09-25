@@ -23,7 +23,15 @@
   "slots": [
     {
       "day": "Saturday",
-      "period": 1,
+      "period": 6,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "EKH",
+      "room": "201"
+    },
+    {
+      "day": "Saturday",
+      "period": 7,
       "span": 1,
       "course": "CSE 3201",
       "teacher": "FAR",
@@ -31,39 +39,39 @@
     },
     {
       "day": "Saturday",
-      "period": 2,
+      "period": 8,
       "span": 1,
       "course": "CSE 3207",
       "teacher": "NOS/SAM",
       "room": "201"
     },
     {
-      "day": "Saturday",
-      "period": 3,
+      "day": "Sunday",
+      "period": 0,
       "span": 1,
-      "course": "CSE 3205",
-      "teacher": "EKH",
-      "room": "201"
-    },
-    {
-      "day": "Saturday",
-      "period": 4,
-      "span": 1,
-      "course": "CSE 3205",
-      "teacher": "EKH",
-      "room": "201"
+      "course": "CSE 3207",
+      "teacher": "NOS/SAM",
+      "room": "102"
     },
     {
       "day": "Sunday",
       "period": 1,
       "span": 1,
-      "course": "CSE 3209",
-      "teacher": "MIT",
-      "room": "201"
+      "course": "CSE 3201",
+      "teacher": "FAR",
+      "room": "102"
     },
     {
       "day": "Sunday",
       "period": 2,
+      "span": 1,
+      "course": "CSE 3201",
+      "teacher": "FAR",
+      "room": "102"
+    },
+    {
+      "day": "Sunday",
+      "period": 3,
       "span": 1,
       "course": "CSE 3203",
       "teacher": "SA",
@@ -71,39 +79,23 @@
     },
     {
       "day": "Sunday",
-      "period": 3,
-      "span": 1,
-      "course": "CSE 3205",
-      "teacher": "EKH",
-      "room": "102"
-    },
-    {
-      "day": "Sunday",
       "period": 4,
       "span": 1,
-      "course": "CSE 3201",
-      "teacher": "FAR",
-      "room": "102"
-    },
-    {
-      "day": "Sunday",
-      "period": 5,
-      "span": 1,
-      "course": "CSE 3201",
-      "teacher": "FAR",
-      "room": "102"
+      "course": "CSE 3209",
+      "teacher": "MIT",
+      "room": "201"
     },
     {
       "day": "Sunday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 3210",
       "teacher": "MIT",
       "room": "SW Lab"
     },
     {
       "day": "Monday",
-      "period": 3,
+      "period": 0,
       "span": 3,
       "course": "CSE 3204 / CSE 3202",
       "teacher": "SA/FAR",
@@ -112,34 +104,34 @@
     {
       "day": "Monday",
       "period": 6,
-      "span": 2,
+      "span": 3,
+      "course": "CSE 3206",
+      "teacher": "EKH",
+      "room": "SW Lab"
+    },
+    {
+      "day": "Tuesday",
+      "period": 0,
+      "span": 3,
       "course": "CSE 3200",
       "teacher": "",
       "room": ""
     },
     {
       "day": "Tuesday",
-      "period": 1,
-      "span": 1,
-      "course": "CSE 3203",
-      "teacher": "SA",
-      "room": "202"
-    },
-    {
-      "day": "Tuesday",
-      "period": 2,
-      "span": 1,
-      "course": "CSE 3203",
-      "teacher": "SA",
-      "room": "202"
-    },
-    {
-      "day": "Tuesday",
       "period": 3,
-      "span": 3,
-      "course": "CSE 3206",
-      "teacher": "EKH",
-      "room": "NW Lab"
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "SA",
+      "room": "202"
+    },
+    {
+      "day": "Tuesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 3203",
+      "teacher": "SA",
+      "room": "202"
     },
     {
       "day": "Tuesday",
@@ -153,36 +145,48 @@
       "day": "Tuesday",
       "period": 7,
       "span": 1,
-      "course": "CSE 3207",
-      "teacher": "NOS/SAM",
+      "course": "CSE 3205",
+      "teacher": "EKH",
+      "room": "201"
+    },
+    {
+      "day": "Tuesday",
+      "period": 8,
+      "span": 1,
+      "course": "CSE 3205",
+      "teacher": "EKH",
       "room": "201"
     },
     {
       "day": "Wednesday",
-      "period": 1,
-      "span": 1,
-      "course": "CSE 3209",
-      "teacher": "MIT",
-      "room": "201"
-    },
-    {
-      "day": "Wednesday",
-      "period": 2,
-      "span": 1,
-      "course": "CSE 3209",
-      "teacher": "MIT",
-      "room": "201"
+      "period": 0,
+      "span": 3,
+      "course": "CSE 3208",
+      "teacher": "NOS",
+      "room": "HPCL  Lab"
     },
     {
       "day": "Wednesday",
       "period": 3,
-      "span": 3,
-      "course": "CSE 3208",
-      "teacher": "NOS/SAM",
-      "room": "HPCL  Lab"
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MIT",
+      "room": "202"
+    },
+    {
+      "day": "Wednesday",
+      "period": 4,
+      "span": 1,
+      "course": "CSE 3209",
+      "teacher": "MIT",
+      "room": "202"
     }
   ],
   "teachers": [
+    {
+      "name": "EKH",
+      "course": "CSE 3205"
+    },
     {
       "name": "FAR",
       "course": "CSE 3201"
@@ -192,20 +196,20 @@
       "course": "CSE 3207"
     },
     {
-      "name": "EKH",
-      "course": "CSE 3205"
+      "name": "SA",
+      "course": "CSE 3203"
     },
     {
       "name": "MIT",
       "course": "CSE 3209"
     },
     {
-      "name": "SA",
-      "course": "CSE 3203"
-    },
-    {
       "name": "SA/FAR",
       "course": "CSE 3204 / CSE 3202"
+    },
+    {
+      "name": "NOS",
+      "course": "CSE 3208"
     }
   ]
 }

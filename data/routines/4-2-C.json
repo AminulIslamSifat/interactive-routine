@@ -23,95 +23,103 @@
   "slots": [
     {
       "day": "Saturday",
-      "period": 1,
-      "span": 1,
-      "course": "CSE 4201",
-      "teacher": "MSH",
-      "room": "103"
-    },
-    {
-      "day": "Saturday",
       "period": 2,
-      "span": 1,
-      "course": "CSE 4209",
-      "teacher": "KZN",
-      "room": "103"
-    },
-    {
-      "day": "Saturday",
-      "period": 3,
       "span": 1,
       "course": "CSE 4211",
       "teacher": "NOS/SAM",
       "room": "Seminar"
     },
     {
-      "day": "Sunday",
-      "period": 1,
+      "day": "Saturday",
+      "period": 3,
       "span": 1,
-      "course": "CSE 4205",
-      "teacher": "SIA",
-      "room": "102"
+      "course": "CSE 4201",
+      "teacher": "MSH",
+      "room": "103"
     },
     {
-      "day": "Sunday",
-      "period": 2,
+      "day": "Saturday",
+      "period": 4,
       "span": 1,
-      "course": "CSE 4203",
-      "teacher": "SUZ/MRI",
-      "room": "102"
+      "course": "CSE 4209",
+      "teacher": "KZN",
+      "room": "103"
     },
     {
       "day": "Sunday",
       "period": 3,
       "span": 1,
-      "course": "CSE 4209",
-      "teacher": "KZN",
+      "course": "CSE 4205",
+      "teacher": "SIA",
       "room": "Seminar"
     },
     {
       "day": "Sunday",
       "period": 4,
       "span": 1,
-      "course": "CSE 4211",
-      "teacher": "SAM",
+      "course": "CSE 4203",
+      "teacher": "SUZ/MRI",
       "room": "Seminar"
     },
     {
-      "day": "Monday",
-      "period": 2,
+      "day": "Sunday",
+      "period": 6,
       "span": 1,
-      "course": "CSE 4205",
-      "teacher": "SIA",
-      "room": "102"
+      "course": "CSE 4209",
+      "teacher": "KZN",
+      "room": "101"
+    },
+    {
+      "day": "Sunday",
+      "period": 7,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "SAM",
+      "room": "101"
     },
     {
       "day": "Monday",
-      "period": 3,
+      "period": 0,
       "span": 3,
-      "course": "CSE 4202 / CSE 4204",
-      "teacher": "MSH/(SUZ/MRI)",
-      "room": "PG Lab / HPCL  Lab"
+      "course": "CSE 4204 / CSE 4202",
+      "teacher": "SUZ/(MRI/MSH)",
+      "room": "HPCL  Lab / PG Lab"
     },
     {
       "day": "Monday",
       "period": 6,
-      "span": 2,
+      "span": 3,
       "course": "CSE 4208",
       "teacher": "",
       "room": ""
     },
     {
       "day": "Tuesday",
+      "period": 0,
+      "span": 1,
+      "course": "CSE 4203",
+      "teacher": "SUZ/MRI",
+      "room": "201"
+    },
+    {
+      "day": "Tuesday",
       "period": 1,
       "span": 1,
-      "course": "CSE 4205",
-      "teacher": "SIA",
-      "room": "103"
+      "course": "CSE 4203",
+      "teacher": "SUZ/MRI",
+      "room": "201"
     },
     {
       "day": "Tuesday",
       "period": 2,
+      "span": 1,
+      "course": "CSE 4211",
+      "teacher": "NOS",
+      "room": "201"
+    },
+    {
+      "day": "Tuesday",
+      "period": 3,
       "span": 1,
       "course": "CSE 4201",
       "teacher": "MSH",
@@ -119,43 +127,27 @@
     },
     {
       "day": "Tuesday",
-      "period": 3,
-      "span": 1,
-      "course": "CSE 4203",
-      "teacher": "SUZ/MRI",
-      "room": "201"
-    },
-    {
-      "day": "Tuesday",
       "period": 4,
       "span": 1,
-      "course": "CSE 4203",
-      "teacher": "SUZ/MRI",
-      "room": "201"
-    },
-    {
-      "day": "Tuesday",
-      "period": 5,
-      "span": 1,
-      "course": "CSE 4211",
-      "teacher": "NOS",
-      "room": "201"
+      "course": "CSE 4205",
+      "teacher": "SIA",
+      "room": "103"
     },
     {
       "day": "Wednesday",
       "period": 0,
       "span": 3,
-      "course": "CSE 4000",
-      "teacher": "",
-      "room": ""
+      "course": "CSE 4206",
+      "teacher": "SIA",
+      "room": "PG Lab"
     },
     {
       "day": "Wednesday",
       "period": 3,
       "span": 3,
-      "course": "CSE 4206",
-      "teacher": "SIA",
-      "room": "PG Lab"
+      "course": "CSE 4000",
+      "teacher": "",
+      "room": ""
     },
     {
       "day": "Wednesday",
@@ -172,9 +164,21 @@
       "course": "CSE 4209",
       "teacher": "KZN",
       "room": "201"
+    },
+    {
+      "day": "Wednesday",
+      "period": 8,
+      "span": 1,
+      "course": "CSE 4205",
+      "teacher": "SIA",
+      "room": "201"
     }
   ],
   "teachers": [
+    {
+      "name": "NOS/SAM",
+      "course": "CSE 4211"
+    },
     {
       "name": "MSH",
       "course": "CSE 4201"
@@ -182,10 +186,6 @@
     {
       "name": "KZN",
       "course": "CSE 4209"
-    },
-    {
-      "name": "NOS/SAM",
-      "course": "CSE 4211"
     },
     {
       "name": "SIA",
@@ -200,8 +200,8 @@
       "course": "CSE 4211"
     },
     {
-      "name": "MSH/(SUZ/MRI)",
-      "course": "CSE 4202 / CSE 4204"
+      "name": "SUZ/(MRI/MSH)",
+      "course": "CSE 4204 / CSE 4202"
     },
     {
       "name": "NOS",
